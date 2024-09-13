@@ -2,6 +2,13 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Sidebar from "@/Components/Sidebar";
+import { Inter } from "next/font/google";
+import { Theme } from '@radix-ui/themes';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+})
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,12 +34,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased w-screen h-screen flex`}
+        className={` ${inter.variable} antialiased min-h-screen w-full h-full flex`}
       >
-        <nav className="h-screen w-[5%]">
+        <nav className="h-screen w-[5%] sticky top-0">
          <Sidebar />
         </nav>
-        <main className="bg-[#FFFAF2] h-screen w-screen px-[24px] py-[22px]">
+        <main className="bg-[#FFFAF2] h-full w-screen px-[24px] py-[22px]">
         {children}
         </main>
       </body>

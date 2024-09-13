@@ -1,4 +1,4 @@
-import { BellDot } from 'lucide-react';
+import { BellDot, Home } from 'lucide-react';
 
 function Topnav() {
     return (
@@ -12,16 +12,15 @@ function Topnav() {
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                 }}>Emily</span></h1>
-                <h2 className=" text-sm">12:20pm,Thursday</h2>
+                <h2 className=" text-sm">12:20pm,September 12,Thursday</h2>
             </section>
             <section className="flex gap-x-3">
-                <div className="bg-white p-3 border-[0.5px] rounded-md">
+                <div className="bg-white p-3 border-[0.5px] rounded-lg">
                  <BellDot />
                 </div>
-                <select className='h-[50px] rounded-md border-[0.5px]'>
-                    <option value="1">Working from office </option>
-                    <option value="2">Working from home</option>
-                </select>
+                <div className='bg-white p-3 rounded-lg border-[0.5px] text-gray-400'>
+                   <h1 className='flex items-center gap-x-3'><Home /> <span>Planned Remote Work</span></h1> 
+                </div>
             </section>
         </header>
     );
